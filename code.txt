@@ -1,0 +1,33 @@
+#define ECHO_PIN 2
+#define TRIG_PIN 3
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
+}
+
+void loop() {
+  // Send trigger pulse
+  digitalWrite(TRIG_PIN, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN, LOW);
+
+  // Measure echo pulse
+  int duration = pulseIn(ECHO_PIN, HIGH);
+
+  // Calculate distance
+  float distance = duration * 0.034 / 2;
+
+  // LED ON if object < 100 cm
+  digitalWrite(LED_BUILTIN, distance < 100);
+
+  // Print distance
+  Serial.print("Distance: ");
+  Serial.println(distance, 2);
+
+  delay(100); // Short delay to avoid spamming serial
+}
