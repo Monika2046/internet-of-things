@@ -36,3 +36,9 @@ Lightweight, runs entirely on a software-based simulation platform
 
 📷 Project Demo
 Add screenshots or screen recordings here to show the simulation running on your laptop
+
+![Screenshot ](https://github.com/user-attachments/assets/fbe07cc9-0c6b-48af-9b07-d034effedd8d)
+
+![Screenshot 1](https://github.com/user-attachments/assets/1e277da8-134e-48f4-9860-7fdcad6cc925)
+
+
